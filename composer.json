@@ -1,0 +1,20 @@
+{
+  "name": "phprpc/phprpc",
+  "type": "library",
+  "description": "rpc-framework",
+  "keywords": ["rpc","rpc framework"],
+  "authors": [
+    {
+      "name": "liugene",
+      "email": "liujun2199@vip.qq.com"
+    }
+  ],
+  "require": {
+    "php": "^5.5 || ^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "phprpc\\": "src"
+    }
+  }
+}
