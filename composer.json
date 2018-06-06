@@ -12,7 +12,10 @@
   "require": {
     "php": "^5.5 || ^7.0",
     "linkphp/console":"dev-master",
-    "linkphp/process":"dev-master"
+    "linkphp/process":"dev-master",
+    "linkphp/db":"dev-master",
+    "linkphp/framework":"dev-master",
+    "linkphp/log":"dev-master"
   },
   "autoload": {
     "psr-4": {

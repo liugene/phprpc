@@ -12,7 +12,7 @@ class PhpRpcServer extends HttpServer
     {
         $this->_server->on('Start',function ($server){
             // 进程命名
-            $this->_process::setName("link-httpd: master {$this->host}:{$this->port}");
+            $this->_process::setName("phpprc: master {$this->host}:{$this->port}");
         });
     }
 
@@ -21,7 +21,7 @@ class PhpRpcServer extends HttpServer
     {
         $this->_server->on('ManagerStart', function ($server) {
             // 进程命名
-            $this->_process::setName("link-httpd: manager");
+            $this->_process::setName("phpprc: manager");
         });
     }
 
@@ -31,13 +31,18 @@ class PhpRpcServer extends HttpServer
         $this->_server->on('WorkerStart', function ($server, $workerId) {
             // 进程命名
             if ($workerId < $server->setting['worker_num']) {
-                $this->_process::setName("link-httpd: worker #{$workerId}");
+                $this->_process::setName("phpprc: worker #{$workerId}");
             } else {
-                $this->_process::setName("link-httpd: task #{$workerId}");
+                $this->_process::setName("phpprc: task #{$workerId}");
             }
         });
         // 实例化Apps
         $this->app->event('router');
+    }
+
+    protected function onReceive()
+    {
+        $this->_server->on('Receive', function($server, $fd, $reactor_id, $data) {});
     }
 
     // 请求事件

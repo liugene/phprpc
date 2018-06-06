@@ -2,4 +2,9 @@
 
 namespace phprpc;
 
-class PhpRpcServer{}
+class PhpRpcServer
+{
+
+    public function start(){}
+
+}

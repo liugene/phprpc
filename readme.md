@@ -24,8 +24,8 @@ bin\
 
 ```php
 
-php httpd start //启动
-php httpd stop  //停止
+php phprpc start //启动
+php phprpc stop  //停止
 
         _                  
   ___  | |      ___     ___     ___     ___
